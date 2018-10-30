@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Meridian Dashboard</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!--  Fonts and icons  -->
+<!--     Fonts and icons     -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+<!-- Black Dashboard CSS -->
+<link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+</head>
+<body>
+<!-- Chartist JS --> 
+<script src="../assets/js/plugins/chartjs.min.js"></script>
+<div class="wrapper ">
+	<div class="sidebar" data-color="azure" data-background-color="white"> 
+		<!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+		<div class="logo"> <a href="http://www.creative-tim.com" class="simple-text logo-mini"> C </a> <a href="http://www.creative-tim.com" class="simple-text logo-normal"> Meridian </a> </div>
+		<div class="sidebar-wrapper">
+			<ul class="nav">
+				<li class="nav-item active  "> <a class="nav-link" href="../sites/index.html"> <i class="tim-icons icon-chart-pie-36"></i>
+					<p>Dashboard</p>
+					</a> </li>
+				
+				<!-- your sidebar here -->
+			</ul>
+		</div>
+	</div>
+	<div class="main-panel"> 
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+			<div class="container-fluid">
+				<div class="navbar-wrapper"> <a class="navbar-brand" href="#pablo">Meridian Studios Dashboard</a> </div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigatio"> <span class="sr-only"></span> <span class="navbar-toggler-icon icon-bar"></span> <span class="navbar-toggler-icon icon-bar"></span> <span class="navbar-toggler-icon icon-bar"></span> </button>
+				<div class="collapse navbar-collapse justify-content-end">
+					<ul class="navbar-nav">
+						<li class="nav-item"> <a class="nav-link" href="#"> <i class="tim-icons icon-bell-55"></i> Refresh </a> </li>
+						<!-- your navbar here -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- End Navbar -->
+		<div class="content">
+			<div class="container-fluid"> 
+				<!-- your content here -->
+				<div class="row">
+					<div class="col-lg 5">
+						<div class="card card-chart" >
+							<div class="card-header">
+								<div class="row">
+									<div class="col-sm-6 text-left">
+										<h5 class="card-category">Per Player</h5>
+										<h4 class="card-title">Average</h4>
+									</div>
+									<div class="col-sm-6">
+										<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+											<label class="btn btn-sm btn-primary btn-simple active" id="ch11">
+												<input type="radio" name="options" checked="">
+												<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">EMs</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-single-02"></i> </span> </label>
+											<label class="btn btn-sm btn-primary btn-simple" id="ch12">
+												<input type="radio" class="d-none d-sm-none" name="options">
+												<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Kill</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+											<label class="btn btn-sm btn-primary btn-simple" id="ch13">
+												<input type="radio" class="d-none d-sm-none" name="options">
+												<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">SPs</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+											<label class="btn btn-sm btn-primary btn-simple" id="ch14">
+												<input type="radio" class="d-none d-sm-none" name="options">
+												<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Ass</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+											<label class="btn btn-sm btn-primary btn-simple" id="ch15">
+												<input type="radio" class="d-none d-sm-none" name="options">
+												<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Pnt</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<canvas id="Chart1"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg 5">
+						<div class="card card-chart" >
+							<div class="card-header">
+								<div class="row">
+									<div class="col-sm-5 text-left">
+										<h5 class="card-category">Per Gamemode</h5>
+										<h4 class="card-title">Average</h4>
+									</div>
+									<div class="col-sm-7">
+											<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+												<label class="btn btn-sm btn-primary btn-simple active" id="cha21">
+													<input type="radio" name="options" checked="">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">KOTH</span> <span class="d-block d-sm-none"> <em class="tim-icons icon-single-02"></em></span></label>
+												<label class="btn btn-sm btn-primary btn-simple" id="cha22">
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Dom</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+												<label class="btn btn-sm btn-primary btn-simple" id="cha23">
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Ball</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+												<label class="btn btn-sm btn-primary btn-simple" id="cha24"> 
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Skirm</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+											</div>
+
+											<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+												<label class="btn btn-sm btn-primary btn-simple active" id="chb21">
+													<input type="radio" name="options" checked="">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">EMs</span> <span class="d-block d-sm-none"> <em class="tim-icons icon-single-02"></em></span></label>
+												<label class="btn btn-sm btn-primary btn-simple" id="chb22">
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Time</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+												<label class="btn btn-sm btn-primary btn-simple" id="chb23">
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Pnt</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+												<label class="btn btn-sm btn-primary btn-simple" id="chb24">
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">SPs</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+												<label class="btn btn-sm btn-primary btn-simple" id="chb25">
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Kill</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+												<label class="btn btn-sm btn-primary btn-simple" id="chb26">
+													<input type="radio" class="d-none d-sm-none" name="options">
+													<span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Ass</span> <span class="d-block d-sm-none"> <i class="tim-icons icon-gift-2"></i> </span> </label>
+											</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<canvas id="Chart2"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg 1">
+						<div class="card text-center">
+							<div class="card-body">
+								<h4 class="card-title">Github Website Update</h4>
+								<p class="card-text">This button updates the website from the github repository and publishes it.</p>
+								<a href="/updategithubhtmlreturn" class="btn">Update</a> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<nav class="float-left">
+					<ul>
+						<li> <a href="https://www.creative-tim.com"> Creative Tim </a> </li>
+					</ul>
+				</nav>
+				<div class="copyright float-right"> &copy; 
+					<script>
+                document.write(new Date().getFullYear())
+            </script>, made with <i class="tim-icons icon-heart-2"></i> by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web. </div>
+				
+				<!-- your footer here --> 
+			</div>
+		</footer>
+	</div>
+</div>
+<!--   Core JS Files   --> 
+<script src="../assets/js/core/jquery.min.js" type="text/javascript"></script> 
+<script src="../assets/js/core/popper.min.js" type="text/javascript"></script> 
+<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script> 
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script> 
+<!--  Google Maps Plugin    --> 
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --> 
+<!--  Notifications Plugin    --> 
+<script src="../assets/js/plugins/bootstrap-notify.js"></script> 
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc --> 
+<script src="../assets/js/black-dashboard.js?v=1.0.0" type="text/javascript"></script> 
+<script>console.log("hello")</script> 
+<!-- Content JS Files --> 
+<script src="../assets/js/chart1.js" type="text/javascript"></script>
+</body>
+</html>
